@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery Time Predictor</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Rubik+Mono+One&display=swap');
+body {background-color:#33475b;}
+</style>
+<div class="container">
+    <div class="row">
+        <div class="form-group ">
+            <h1 class="text-red card text-center" style="font-size:50px; font-family:Carter One; color:white">Delivery Time
+            <h1 class="text-red card text-center" style="font-size:50px; font-family:Carter One; color:white">Delivery Time
+                Predictor</h1>
+            <div class="col-xs-4 text-center card text-center">
+                <form action="/predict" method="post" class="form-group">
+                    <input name="age" type="text" class="form-control"
+                           placeholder="Enter The Age of the delivery Person"
+                           style="position:relative;left: 408px;top: 40px;"><br>
+                    <input name="rating" type="text" class="form-control"
+                           placeholder="Enter The Rating of the delivery Person"
+                           style="position:relative;left: 408px;top: 40px;"><br>
+                    <input name="distance" type="text" class="form-control"
+                           placeholder="Enter The Distance of the delivery"
+                           style="position:relative;left: 408px;top: 40px;"><br>
+                    <div class="text-center">
+                        <input type="submit" class="btn btn-lg btn-warning "
+                               style="position:relative;left: 408px;top: 40px;">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% if data %}
+<div>
+    <h1 class="text-black card text-center" style="position:relative;left: 25px;top: 120px;color:red">The predicted time
+        for the delivery is: {{data}} mins</h1>
+</div>
+{% endif %}
+</html>
